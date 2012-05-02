@@ -1,4 +1,4 @@
-tms2
+TMS2
 ====
 
-TrackMania  Serveurs Scripts
+TrackMania Serveurs Scripts
