@@ -1,0 +1,12 @@
+#
+#langue english
+#
+_msg_usage="Usage"
+_msg_is_already_online="is already online"
+_msg_starting_server="Starting server"
+_msg_starting_controller="Starting controller"
+_msg_shutting_down="${red}Stopping ${std}server and controller"
+_msg_is_online="is ${green}online"
+_msg_is_offline="is ${yellow}offline"
+_msg_exist="existing"
+_msg_not_exist="not found"

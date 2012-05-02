@@ -1,0 +1,12 @@
+#
+#langue french
+#
+_msg_usage="Utilisation"
+_msg_is_already_online="est deja en fonctionnement"
+_msg_starting_server="Demarrage du serveur"
+_msg_starting_controller="Demarrage du controleur"
+_msg_shutting_down="${red}Arret ${std}du serveur et du controleur"
+_msg_is_online="est ${green}en ligne"
+_msg_is_offline="est ${yellow}hors ligne"
+_msg_exist="existant"
+_msg_not_exist="introuvable"

@@ -9,8 +9,8 @@
 	prog_name="Tms2"
 
 source config.[login].txt
-source ./${conf}/config
-source ./${conf}/functions
+source ./${conf}/config.sh
+source ./${conf}/functions.sh
 
 case "$1" in 
 	start)		fn_do_start ;;
