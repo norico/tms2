@@ -7,9 +7,9 @@ Program="ManiaPlanetServer"
 Template_dir=${conf}"/templates"
 
 
-ManiaPlanet-Server-Lastest="http://files.maniaplanet.com/tools/ManiaPlanetDedicated_2012-01-17.zip"
-Fast4-Lastest="http://slig.info/fast4.0/fast4.0.0n.zip"
-xaseco2-Lastest="http://www.gamers.org/tm2/xaseco2_100.zip"
+#ManiaPlanet-Server-Lastest="http://files.maniaplanet.com/tools/ManiaPlanetDedicated_2012-01-17.zip"
+#Fast4-Lastest="http://slig.info/fast4.0/fast4.0.0n.zip"
+#xaseco2-Lastest="http://www.gamers.org/tm2/xaseco2_100.zip"
 
 
 Dedicated="dedicated_cfg.${login_server}.txt"

@@ -51,7 +51,7 @@ function fn_archive_force () {
 #	fi
 #	fn_do_archive
 #	rm ./${login_server}.pid
-}
+#}
 
 
 #########################################################
