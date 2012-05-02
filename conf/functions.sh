@@ -28,11 +28,12 @@ function fn_do_archive () {
 	if test ${Controller} = "xaseco2"
 	then
 		Log_file="./xaseco2/"${login_server}"/logfile.txt"
-	fi
-	
-	if test ${Controller} = "fast4"
+	elif test ${Controller} = "fast4"
 	then
 		Log_file="./fast4/"${login_server}"/fastlog/fastlog.tm2."${login_server}".txt"
+	fi
+	else 
+		Log_file=""
 	fi
 
 	files=${files}" "${ConsoleLog}" "${GameLog}" "${Log_file}
@@ -41,18 +42,16 @@ function fn_do_archive () {
 }
 
 #########################################################
-function fn_archive_force () {
-
+#function fn_archive_force () {
 # in progress
-
 #	if ! test -f  ${login_server}.pid
 #	then
 #		echo "force" > ${login_server}.pid
 #	fi
 #	fn_do_archive
 #	rm ./${login_server}.pid
+#
 #}
-
 
 #########################################################
 function fn_do_start () {
@@ -67,11 +66,14 @@ function fn_do_start () {
 		ps aux | grep "${cmd}" | grep -v grep |grep -v SCREEN | awk '{print $2}' >> ${login_server}.pid
 		echo -e ${login_server}.pid
 		sleep 1
-		echo -e "${_msg_starting_controller}"
-		cd ./${Controller}/${login_server}/
-		screen -AmdS ${Controller_screen_name} ./tms2-${Controller}.sh ${login_server}
-		#sleep 2
-		#screen -ls
+
+		if test ${Controller} != "none"
+			echo -e "${_msg_starting_controller}"
+			cd ./${Controller}/${login_server}/
+			screen -AmdS ${Controller_screen_name} ./tms2-${Controller}.sh ${login_server}
+			#sleep 2
+			#screen -ls
+		fi
 	fi
 } 
 
@@ -82,7 +84,9 @@ function fn_do_stop() {
 	then
 		echo -e "${_msg_shutting_down}"
 		screen  -rX ${Program_screen_name} quit
-		screen  -rX ${Controller_screen_name} quit
+		if test ${Controller} != "none"
+			screen  -rX ${Controller_screen_name} quit
+		fi
 		fn_do_archive
 		rm ./${login_server}.pid
 	else

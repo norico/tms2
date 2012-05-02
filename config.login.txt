@@ -1,0 +1,14 @@
+#
+# Copyright (c) 2012 Norico - norico@tm-tnt.net
+#
+
+login_server="your-login"
+validation_code="CODE"
+
+
+# xaseco2 or fast4
+
+Controller="xaseco2"
+
+
+lang="fr"
