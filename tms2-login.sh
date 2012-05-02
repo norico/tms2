@@ -3,9 +3,9 @@
 # Copyright (c) 2011 Norico - norico@tm-tnt.net
 #
 
-# directiry of config files
+# repertoire du fichier de configuration
 	conf='./conf'
-# program name
+# nom du programme
 	prog_name="Tms2"
 
 source config.[login].txt
