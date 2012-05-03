@@ -25,16 +25,16 @@ function fn_do_archive () {
 	ConsoleLog="./Logs/ConsoleLog."${pidofserver}".txt"
 	GameLog="./Logs/GameLog."${login_server}".txt"
 
+	Log_file=""
 	if test ${Controller} = "xaseco2"
 	then
 		Log_file="./xaseco2/"${login_server}"/logfile.txt"
-	elif test ${Controller} = "fast4"
+	fi 
+
+	if test ${Controller} = "fast4"
 	then
 		Log_file="./fast4/"${login_server}"/fastlog/fastlog.tm2."${login_server}".txt"
-	fi
-	else 
-		Log_file=""
-	fi
+	fi 
 
 	files=${files}" "${ConsoleLog}" "${GameLog}" "${Log_file}
 	echo "compressing files in ${login_server}-${pidofserver}-${DATE}.tgz"
@@ -68,6 +68,7 @@ function fn_do_start () {
 		sleep 1
 
 		if test ${Controller} != "none"
+		then
 			echo -e "${_msg_starting_controller}"
 			cd ./${Controller}/${login_server}/
 			screen -AmdS ${Controller_screen_name} ./tms2-${Controller}.sh ${login_server}
@@ -85,6 +86,7 @@ function fn_do_stop() {
 		echo -e "${_msg_shutting_down}"
 		screen  -rX ${Program_screen_name} quit
 		if test ${Controller} != "none"
+		then
 			screen  -rX ${Controller_screen_name} quit
 		fi
 		fn_do_archive
