@@ -111,7 +111,7 @@ function fn_do_restart() {
 }
 
 #########################################################
-function fn_version () {
+function fn_version() {
   #Return version 
   version=`cat ./${conf}/version.txt`
   echo -e "${prog_name} ${blod} ${version} ${std}"
@@ -196,14 +196,11 @@ function fn_do_create () {
 
 #########################################################
 function fn_ckeck_update () {
-	# https://raw.github.com/norico/tms2/master/conf/version.txt
-	# ${conf}/version.txt
-	mkdir ./tmp
-	cd ./tmp
-	var git_version=`wget https://raw.github.com/norico/tms2/master/conf/version.txt`
-	var loc_version=`cat ${conf}/version.txt`
-	if [git_version != loc_version]
+	loc_version=$(cat ./conf/version.txt)
+	git_version=$(wget -qO- https://raw.github.com/norico/tms2/master/conf/version.txt)
+	sleep 1
+	if [ "${git_version}" != "${loc_version}" ]
 	then 
 		echo -e "nouvelle version disponible"
-	fi 
+	fi
 }
