@@ -1,6 +1,6 @@
 TMS2
 ====
-TrackMania Serveurs Scripts
+ManiaPlanet Serveurs Scripts (TrackMania²)
 
 ## Commandes
  * **start** - Démarrage du serveur. 
